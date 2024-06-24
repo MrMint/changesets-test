@@ -41,15 +41,17 @@ jobs:
       - id: changesets
         name: Create Release Pull Request
         uses: changesets/action@v1
-        with:
-          publish: pnpm publish --dry-run
+        # with:
+        # publish: pnpm publish --dry-run
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-      - name: Publish
-        if: steps.changesets.outputs.published == 'true'
-        #   # You can do something when a publish should happen.
-        run: pnpm test
-      # - name: publish
-      #   if: steps.changesets.outputs.haschangesets == 'false'
-      #   # you can do something when a publish should happen.
-      #   run: yarn publish
+      # - name: Publish
+      #   if: steps.changesets.outputs.published == 'true'
+      #   # You can do something when a publish should happen.
+      # run: pnpm test
+      - name: publish
+        if: steps.changesets.outputs.haschangesets == 'false'
+        #   # you can do something when a publish should happen.
+        run: |
+          pnpm changeset tag
+          git push --tags
