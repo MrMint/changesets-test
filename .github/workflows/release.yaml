@@ -42,6 +42,7 @@ jobs:
         name: Create Release Pull Request
         uses: changesets/action@v1
         env:
+          publish: pnpm publish --dry-run
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
       - name: Publish
         if: steps.changesets.outputs.published == 'true'
