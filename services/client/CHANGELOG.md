@@ -1,5 +1,16 @@
 # client
 
+## 0.2.0
+
+### Minor Changes
+
+- [#10](https://github.com/MrMint/changesets-test/pull/10) [`5dbe44c`](https://github.com/MrMint/changesets-test/commit/5dbe44cc11c6628a90538cc6effa0820fbe8481a) Thanks [@MrMint](https://github.com/MrMint)! - Adds telemetry package
+
+### Patch Changes
+
+- Updated dependencies [[`6696bf3`](https://github.com/MrMint/changesets-test/commit/6696bf371fa37f625fea1cf52d6fd7ed745156a6)]:
+  - telemetry@0.0.3
+
 ## 0.1.0
 
 ### Minor Changes
